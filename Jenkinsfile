@@ -9,7 +9,7 @@ pipeline {
     stage('CI') {
       steps {
         echo 'En el stage de CI'
-        sh 'npm --version'
+        sh 'docker --version'
       }
     }
 
