@@ -10,7 +10,6 @@ pipeline {
       }
       steps {
         echo 'En el stage de CI'
-        sh 'docker --version'
       }
     }
 
