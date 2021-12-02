@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'jenkins-slave:latest'
+    }
+
+  }
   stages {
     stage('BUILD') {
       agent {
