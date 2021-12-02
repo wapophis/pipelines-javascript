@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Integración Continua') {
+    stage('BUILD') {
       agent {
         docker {
           image 'node:14-alpine'
@@ -9,11 +9,19 @@ pipeline {
 
       }
       steps {
-        echo 'En el stage de CI'
-        sh '''npm install
-&& npm build'''
-        sh 'docker login wapophis dejoramoes7'
-        sh 'docker push'
+        sh 'npm install'
+      }
+    }
+
+    stage('TEST') {
+      steps {
+        sh 'npm build'
+      }
+    }
+
+    stage('RELEASE') {
+      steps {
+        sh 'docker login -u wapophis -p dejoramoes7'
       }
     }
 
