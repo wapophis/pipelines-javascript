@@ -21,7 +21,7 @@ pipeline {
 
     stage('RELEASE') {
       steps {
-        sh 'docker login -u wapophis -p dejoramoes7'
+        sh 'docker login -u wapophis -p'
       }
     }
 
