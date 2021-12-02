@@ -11,11 +11,11 @@ describe('String', function () {
     });
     
       describe('#indexOfFailing', function () {
-        it('should return 0 when the substring is not present', function () {
+        it('should return -1 again when the substring is not present', function () {
             var myString = 'test';
 
-            assert.equal(0, myString.indexOf('x'));
-            assert.equal(0, myString.indexOf('y'));
+            assert.equal(-1, myString.indexOf('x'));
+            assert.equal(-1, myString.indexOf('y'));
         });
     });
 });

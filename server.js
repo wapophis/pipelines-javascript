@@ -9,7 +9,50 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hola desde la rama del profesor \n');
+  var output=`<!DOCTYPE html>
+  <html>
+    <head>
+      <META charset="UTF-8" />
+      <title>
+          {put your title here}
+      </title>
+      <link rel="stylesheet" type="text/css" media="all" href="default.css" />
+    </head>
+  <body>
+    <aside>
+      <a href="/" target="blank"><img src="logo.png" alt="logo"></a>
+      <nav>
+        <a href="/blog">Blog</a>
+        <a href="/portfolio">Portfolio</a> 
+        <a href="/resume">Resume</a>
+        <a href="mailto:{your email}" target="blank">Email</a>
+        <a href="/links" target="blank">Links</a>
+       </nav>
+    </aside>
+  <div id="content">
+    <article>
+      <header><h2>{Post Title}</h2></header>
+          <p>
+              {post text here}
+          </p> 
+      <header><h2>{Another Title}</h2></header>
+          <p>
+              {most post text}
+          </p>
+    </article>
+    <article>
+      <header><h2>{A Second Article}</h2></header>
+          <p>
+              {second post text here}
+          </p> 
+    </article>
+  </div>
+      <footer>
+          {footer text here}
+      </footer>
+    </body>
+  </html>`;
+  res.send(output);
 });
 
 var port = process.env.PORT||PORT;
