@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+   docker {
+      image 'pdmlab/jenkins-node-docker-agent:6.11.1'
+    }
   stages {
     stage('BUILD') {
       steps {
