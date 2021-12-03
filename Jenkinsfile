@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'pdmlab/jenkins-node-docker-agent:6.11.1'
+    node {
+      label 'nodejs-docker'
     }
 
   }
