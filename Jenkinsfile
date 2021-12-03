@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'nodejs-docker'
+      label 'nodejs-docker-slave'
     }
 
   }
