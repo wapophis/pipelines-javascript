@@ -21,6 +21,7 @@ pipeline {
     stage('Publish') {
       steps {
         junit 'TEST-RESULTS.xml'
+        cobertura()
       }
     }
 
